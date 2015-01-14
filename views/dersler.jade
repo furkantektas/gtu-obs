@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    nav.navbar.navbar-default
+      div.container-fluid
+        div.navbar-header
+          a.navbar-brand(href='/dersler')
+            img(src='/img/gtu.png')
+          p.navbar-text GTU - #{userInfo.title}
+    div.table-responsive
+        table.table.table-stripped
+            thead
+                th= 'Not'
+                th= 'Ders Kodu'
+                th= 'Ders Adı'
+            tbody
+                - each ders in data.data
+                    -var trClass = ''
+                    if ( ders.HarfNotKarsilik && ders.HarfNotKarsilik.indexOf("FF") > -1 )
+                        -trClass = 'danger'
+                    else if ( ders.HarfNotKarsilik && (ders.HarfNotKarsilik.indexOf("DD") > -1 || ders.HarfNotKarsilik.indexOf("DC") > -1) )
+                        -trClass = 'warning'
+                    else if ( ders.HarfNotKarsilik && (ders.HarfNotKarsilik.indexOf("AA") > -1 || ders.HarfNotKarsilik.indexOf("BA") > -1) )
+                        -trClass = 'success'
+                    tr(class=trClass)
+                        td= ders.HarfNotKarsilik
+                        td= ders.DersKodu
+                        td= ders.DersAdi
+    p(style='text-align:right; margin-top:40px') made with ♥ by 
+      a(href='http://furkantektas.com',target='_blank') furkantektas
