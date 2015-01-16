@@ -1,0 +1,20 @@
+block not-tablosu
+    div.table-responsive
+        table.table.table-stripped
+            thead
+                th= 'Not'
+                th= 'Ders Kodu'
+                th= 'Ders Adı'
+            tbody
+                - each ders in data.data
+                    -var trClass = 'info'
+                    if ( ders.HarfNotKarsilik && ders.HarfNotKarsilik.indexOf("F") > -1 )
+                        -trClass = 'danger'
+                    else if ( ders.HarfNotKarsilik && (ders.HarfNotKarsilik.indexOf("DD") > -1 || ders.HarfNotKarsilik.indexOf("DC") > -1) )
+                        -trClass = 'warning'
+                    else if ( ders.HarfNotKarsilik && (ders.HarfNotKarsilik.indexOf("AA") > -1 || ders.HarfNotKarsilik.indexOf("BA") > -1) || (ders.HarfNotKarsilik.indexOf("P") > -1) )
+                        -trClass = 'success'
+                    tr(class=trClass)
+                        td= ders.HarfNotKarsilik
+                        td= ders.DersKodu
+                        td= ders.DersAdi

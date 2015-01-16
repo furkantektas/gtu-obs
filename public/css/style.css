@@ -35,3 +35,52 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.navbar-text {
+    float:left;
+}
+
+.navbar-header{
+  width:100%;
+}
+
+#refresh-button {
+    display: inline-block;
+    float: right;
+}
+
+
+
+.spin {
+  -webkit-animation: spin 1s infinite linear;
+  -moz-animation: spin 1s infinite linear;
+  -o-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
