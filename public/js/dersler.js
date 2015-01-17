@@ -1,6 +1,7 @@
 function init() {
   var notContainer = $('#not-container');
   var refreshButton = $('#refresh-button');
+  var transkriptButton = $('#transkript-button');
 
   var animateClass = "spin";
 
@@ -19,6 +20,24 @@ function init() {
           }
       });
   });
+  
+  // transkriptButton.click(function(){
+    // transkriptButton.addClass( animateClass );
+    // notContainer.html('<img src="/dersler/transkript">');
+    
+    // $.ajax({ 
+    //       url: '/dersler/transkript',
+    //       data: {
+    //         "login" : localStorage.getItem('login'),
+    //         "password" : localStorage.getItem('password')
+    //       },
+    //       type: 'POST',
+    //       success: function(result) {
+    //         notContainer.html(result);
+    //         transkriptButton.removeClass( animateClass );
+    //       }
+    //   });
+  // });
 }
 
 if (window.addEventListener){

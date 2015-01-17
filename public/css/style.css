@@ -44,12 +44,15 @@ body {
   width:100%;
 }
 
-#refresh-button {
-    display: inline-block;
+#nav-icons {
     float: right;
 }
 
-
+#nav-icons p {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 .spin {
   -webkit-animation: spin 1s infinite linear;

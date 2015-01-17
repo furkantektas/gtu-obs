@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session')
 
 var routes = require('./routes/index');
 var dersler = require('./routes/dersler');
@@ -19,7 +20,14 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser('gtu-ogrenci-isleri-sistemini-yazan-barzoya-selam'));
+var secretStr = 'gtu-ogrenci-isleri-sistemini-yazan-barzoya-selam';
+app.use(cookieParser(secretStr));
+app.use(session({
+  secret: secretStr,
+  resave: false,
+  saveUninitialized: true
+}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/dersler', dersler);

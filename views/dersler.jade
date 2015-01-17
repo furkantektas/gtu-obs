@@ -10,8 +10,15 @@ block content
           a.navbar-brand(href='/dersler')
             img(src='/img/gtu.png')
           p.navbar-text GTU - #{userInfo}
-          p#refresh-button.navbar-text 
-            a(href='#') 
-              span.glyphicon.glyphicon-refresh(aria-hidden:'true')
+          div#nav-icons
+            p#refresh-button.navbar-text 
+              a(href='#') 
+                span.glyphicon.glyphicon-refresh(aria-hidden:'true')
+            p#transkript-button.navbar-text 
+              a(href='/dersler/transkript',target='_blank') 
+                span.glyphicon.glyphicon-list-alt(aria-hidden:'true')
+            p#logout-button.navbar-text 
+              a(href='/logout') 
+                span.glyphicon.glyphicon-log-out(aria-hidden:'true')
     div#not-container
         include partial-dersler
